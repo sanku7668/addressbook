@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: project-docker-service
+spec:
+  selector:
+    app: project-docker
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080  # Port exposed by your application
+    nodePort: 30080  # Specify the desired NodePort number, or omit for automatic assignment
