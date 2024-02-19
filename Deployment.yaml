@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project-docker-deployment
+spec:
+  replicas: 1  # Number of desired replicas
+  selector:
+    matchLabels:
+      app: project-docker
+  template:
+    metadata:
+      labels:
+        app: project-docker
+    spec:
+      containers:
+      - name: project-docker
+        image: tampoohoonm/project-docker:1
+        ports:
+        - containerPort: 8080  # Port exposed by your application
