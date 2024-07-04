@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+      source = "hashicorp/aws"
+      version = "5.57.0"
     }
   }
 }
@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 # Create a VPC
-resource "aws_instance" "web_server" {
+resource "aws_instance" "web_server_1" {
   ami           = "ami-06c68f701d8090592" # Replace with the desired AMI ID
   instance_type = var.ec2_instance_type
   key_name = "k8s"
@@ -21,7 +21,7 @@ resource "aws_instance" "web_server" {
     Name = "test"
   }
 }
-resource "aws_instance" "web_server" {
+resource "aws_instance" "web_server_2" {
   ami           = "ami-06c68f701d8090592" # Replace with the desired AMI ID
   instance_type = var.ec2_instance_type
   key_name = "k8s"
@@ -30,7 +30,7 @@ resource "aws_instance" "web_server" {
   }
 }
 
-resource "aws_instance" "web_server" {
+resource "aws_instance" "web_server_3" {
   ami           = "ami-06c68f701d8090592" # Replace with the desired AMI ID
   instance_type = var.ec2_instance_type
   key_name = "k8s"
