@@ -14,9 +14,28 @@ provider "aws" {
 
 # Create a VPC
 resource "aws_instance" "web_server" {
-  ami           = "ami-0440d3b780d96b29d" # Replace with the desired AMI ID
+  ami           = "ami-06c68f701d8090592" # Replace with the desired AMI ID
   instance_type = var.ec2_instance_type
+  key_name = "k8s"
   tags = {
-    Name = "web-server"
+    Name = "test"
   }
 }
+resource "aws_instance" "web_server" {
+  ami           = "ami-06c68f701d8090592" # Replace with the desired AMI ID
+  instance_type = var.ec2_instance_type
+  key_name = "k8s"
+  tags = {
+    Name = "nexus"
+  }
+}
+
+resource "aws_instance" "web_server" {
+  ami           = "ami-06c68f701d8090592" # Replace with the desired AMI ID
+  instance_type = var.ec2_instance_type
+  key_name = "k8s"
+  tags = {
+    Name = "sonar"
+  }
+}
+
